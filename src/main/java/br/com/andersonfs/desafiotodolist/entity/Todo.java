@@ -6,6 +6,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
+import org.apache.commons.lang3.builder.EqualsBuilder;
 
 @Entity
 @Table(name = "todos")
@@ -20,12 +21,24 @@ public class Todo {
     private boolean realizado;
     private int prioridade;
 
+    public Todo() {
+
+    }
+
     public Todo(String nome, String descricao, boolean realizado, int prioridade) {
         this.nome = nome;
         this.descricao = descricao;
         this.realizado = realizado;
         this.prioridade = prioridade;
     }
+    public Todo(Long id, @NotBlank String nome, @NotBlank String descricao, boolean realizado, int prioridade) {
+        this.id = id;
+        this.nome = nome;
+        this.descricao = descricao;
+        this.realizado = realizado;
+        this.prioridade = prioridade;
+    }
+
 
     public Long getId() {
         return id;
@@ -65,5 +78,9 @@ public class Todo {
 
     public void setPrioridade(int prioridade) {
         this.prioridade = prioridade;
+    }
+    @Override
+    public boolean equals(Object obj) {
+        return EqualsBuilder.reflectionEquals(obj, this);
     }
 }
