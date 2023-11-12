@@ -1,5 +1,4 @@
-# todolist
-Projeto desenvolver uma aplicação web utilizando uma linguagem de programação e um framework da sua escolha.  A aplicação deve consistir em um sistema de gerenciamento de tarefas, onde os usuarios podem criar,visualizar , editar e excluir tarefas.
+
 Desafio : TODO List
  
 
