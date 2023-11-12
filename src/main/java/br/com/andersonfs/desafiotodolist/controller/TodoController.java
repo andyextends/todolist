@@ -3,7 +3,6 @@ package br.com.andersonfs.desafiotodolist.controller;
 import br.com.andersonfs.desafiotodolist.entity.Todo;
 import br.com.andersonfs.desafiotodolist.service.TodoService;
 import jakarta.validation.Valid;
-import org.apache.logging.log4j.Logger;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -25,7 +24,6 @@ public class TodoController {
     }
     @GetMapping
     List<Todo> list() {
-
 
         return todoService.list();
     }
